@@ -1,0 +1,35 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+      <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" />
+      <script type="text/javascript" src="{{ STATIC_URL }}jquery-1.9.1.min.js"></script>  
+     	<style type="text/css">
+		.errorlist li{
+			color:red;
+		}
+	</style> 
+	{% render_block "css" %}
+  </head>
+  <body>
+      {% cms_toolbar %}
+      <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+      <div class="container-fluid">
+      <ul class="nav">
+      {% show_menu 0 1 100 100 "menu.html"%}
+      </ul>
+      </div>
+      </div>
+      </div>
+      <iframe src="{{ redirect }}" seamless frameBorder="0" style="overflow:hidden;height:10000px;width:100%;"/></iframe>
+      {% comment %}
+      {% placeholder base_content %}
+      {% block base_content %}{% endblock %}
+      {% render_block "js" %}
+      {% endcomment %}
+      <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

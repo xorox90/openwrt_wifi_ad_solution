@@ -1,0 +1,84 @@
+{% extends "sub_base.html" %}
+{% load menu_tags sekizai_tags %}
+{% block sub_menu %}
+{% show_menu_below_id "shopping" %}
+{% endblock %}
+
+{% addtoblock "css" %}
+<style type="text/css">
+	.errorlist li{
+	color:red;
+	}
+</style>
+{% endaddtoblock "css" %}
+
+{% block sub_content %}
+	<form action="{% url payment.views.dutch product.id %}" method="post">
+	{% csrf_token %}
+	{{ form.non_field_errors }}
+	<p>
+		{{ form.recipient.label }}
+		<label>※ 핸드폰 주소는 하이픈 없이 적어야합니다.<br>ex) 01012345678</label>	
+		{{ form.recipient.errors }}
+		{{ form.recipient }}
+
+	</p>
+
+	<p>
+		<label>{{ form.msg.label }}</label>
+		{{ form.msg.errors }}
+		{{ form.msg }}
+	</p>
+	<p>
+
+		<label>{{ form.slug.label }}</label>
+		<label>※ 공유링크의 주소는 http://jmm.kr/dutch/<공유링크></label>	
+		{{ form.slug.errors }}
+		{{ form.slug }}
+	</p>
+	<p>
+		<label>{{ form.sponsor.label }}</label>
+		{{ form.sponsor.errors }}
+		{{ form.sponsor }}
+	</p>
+
+	<p><input type="submit" class="btn btn-primary" value="더치페이 만들기" /></p>
+	</form>
+
+	<p><label>주최자 부담금: </label><label id="sponsor"></label></p>
+  	<p><label>참가자 부담금: </label><label id="sub_sponsor"></label></p>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+	$("#id_sponsor").change(function(){
+		num = $("#id_sponsor").val()
+		num*=1
+
+		price = {{product.price}}
+		  
+		if(isNaN(num)){
+		  num = 2
+		  $("#id_sponsor").val(num)
+		}else if(num<2){
+		  num = 2
+		  alert("2인 이상만 더치페이가 가능합니다")
+		  $("#id_sponsor").val(num)
+		}
+		sponsor_= 0
+		if(price % num){
+		  sponsor_ += price % num
+		  price -= sponsor_
+		}
+		  sponsor_ += price/num
+		  sub_sponsor_ = price/num
+
+		  $("#sponsor").text(sponsor_)
+		  $("#sub_sponsor").text(sub_sponsor_)
+	})
+	$("#id_sponsor").val(2)
+	$("#id_sponsor").change()
+	})
+
+	</script>	
+{% endblock %}

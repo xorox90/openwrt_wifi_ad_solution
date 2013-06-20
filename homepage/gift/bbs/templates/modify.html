@@ -1,0 +1,12 @@
+{% extends "basic.html" %}
+{% load menu_tags %}
+
+{% block basic_content %}
+
+<form action="{% url "bbs.views.modify" entity.id %}" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input class="btn" type="submit" name="update" value="글 수정" />
+<input class="btn btn-danger" type="submit" name="delete" value="글 삭제" />
+</form>
+
+{% endblock %}

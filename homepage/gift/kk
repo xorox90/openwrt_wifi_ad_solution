@@ -1,0 +1,44 @@
+[1m********************************[0m
+[1mChecking django CMS installation[0m
+[1m********************************[0m
+
+[1mSekizai[0m
+[1m=======[0m
+
+  - Sekizai is installed [32;1m[OK][0m
+  - Sekizai template context processor is installed [32;1m[OK][0m
+  - Sekizai namespaces 'js' and 'css' found in 'template_1.html' [32;1m[OK][0m
+  - Sekizai namespaces 'js' and 'css' found in 'sub_base.html' [32;1m[OK][0m
+
+Sekizai configuration okay [32;1m[OK][0m
+
+[1mInternationalization[0m
+[1m====================[0m
+
+  - New style CMS_LANGUAGES [32;1m[OK][0m
+
+[1mDeprecated settings[0m
+[1m===================[0m
+
+  - No deprecated settings found [34;1m[SKIP][0m
+
+[1mPlugin instances[0m
+[1m================[0m
+
+  - Plugin instances of 6 types found in the database [32;1m[OK][0m
+
+
+[1mPresence of "copy_relations"[0m
+[1m============================[0m
+
+
+All plugins have "copy_relations" method if needed. [32;1m[OK][0m
+
+
+[1mOVERALL RESULTS[0m
+[1m===============[0m
+
+[34;1m1 checks skipped![0m
+[32;1m8 checks successful![0m
+
+

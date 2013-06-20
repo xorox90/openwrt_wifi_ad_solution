@@ -1,0 +1,18 @@
+{% load cms_tags menu_tags %}
+{% for child in children %}
+<li class="{% if child.children %}dropdown {% endif %}{% if child.selected %}active{% endif %}{% if child.ancestor %}active{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}">
+	
+	{% if child.children %}
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ child.get_menu_title }}<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+        {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+    	</ul>
+	{% else %}
+		{% if child.get_menu_title == "홈" %}
+		<a href="http://jmm.kr/?redirect=http://istarbucks.co.kr">홈</a>
+		{% else %} 
+		<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+		{% endif %}
+	{% endif %}
+</li>
+{% endfor %}

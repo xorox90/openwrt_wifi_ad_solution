@@ -1,0 +1,15 @@
+{% extends "basic.html" %}
+{% load menu_tags %}
+
+{% block basic_content %}
+{% if auth %}
+<dl>
+<dt>타이틀</dt>
+<dd>{{ entity.title }}</dd>
+<dt>내용</dt>
+<dd>{{ entity.content }}</dd>
+<a class="btn btn-primary" href="{% url "bbs.views.modify" entity.id %}">수정/삭제 하기</a>
+{% else %}
+관리자만 볼 수 있는 글입니다.
+{% endif %}
+{% endblock %}

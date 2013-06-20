@@ -1,0 +1,24 @@
+Running migrations for cms:
+- Nothing to migrate.
+ - Loading initial data for cms.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for menus:
+- Nothing to migrate.
+ - Loading initial data for menus.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for text:
+- Nothing to migrate.
+ - Loading initial data for text.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for picture:
+- Nothing to migrate.
+ - Loading initial data for picture.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for link:
+- Nothing to migrate.
+ - Loading initial data for link.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for file:
+- Nothing to migrate.
+ - Loading initial data for file.
+Installed 0 object(s) from 0 fixture(s)

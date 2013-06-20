@@ -1,0 +1,22 @@
+{% load thumbnail %}
+<h3>{{ category }}</h3>
+<div class="row">
+<ul class="thumbnails">
+{% for product in products.all %}
+<li class="span2">
+<dl>
+	<dt>상품명</dt>
+	<dd>{{ product.name }}</dd>
+	<dt>가격</dt>
+	<dd>{{ product.price }}원</dd>
+	
+	<a class="thumbnail" href="{% url "product.views.detail" product.id %}" >
+	{% thumbnail product.image "150x150" crop="center" as im %}
+	<img src="{{ im.url }}" width="{{im.width}}" height="{{im.height}}" />
+	{% endthumbnail %}
+	</a>
+</dl>
+</li>
+{% endfor %}
+</ul>
+</div>

@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+{% load menu_tags %}
+{% load pagination_tags %}
+
+{% block basic_content %}
+	<table class="table table-hover">
+	<thead>
+	<tr><th width="18px">#</th><th>제목</th></tr>
+	</thead>
+
+	<tbody>
+	{% autopaginate entities 10 %}
+	{% for entity in entities %}
+
+		<tr><td>{{entity.id}}</td><td>{% if entity.onlyadmin %}<i class="icon-lock"></i> {% endif %}<a href={% url "bbs.views.view" entity.id %}>{{ entity.title }}</a></td></tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	{% paginate %}
+<a class="btn btn-primary" href={% url "bbs.views.write" %}>글쓰기</a>
+{% endblock %}

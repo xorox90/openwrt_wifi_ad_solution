@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block base_content %}
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12">
+  {% placeholder basic_content %}
+  {% block basic_content %}
+  {% endblock %}
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "basic.html" %}
+{% load menu_tags %}
+
+{% block basic_content %}
+
+<form action="{% url "bbs.views.write" %}" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="글 작성" />
+</form>
+{% endblock %}

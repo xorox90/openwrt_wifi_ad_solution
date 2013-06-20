@@ -1,0 +1,21 @@
+{% extends "side-menu.html" %}
+{% load menu_tags %}
+{% block sub_menu %}
+{% show_menu_below_id "shopping" %}
+{% endblock %}
+
+{% block sub_content %}
+<dl class="thumbnails span9">
+
+
+	<!--div class="thumbnail" -->
+	<dt><img src="{{ product.image.url }}" /></dt>
+	<!-- /div-->
+	<dt>상품명</dt>
+	<dd>{{ product.name }}</dd>
+	<dt>제품소개</dt>
+	<dd>{{ product.description }}</dd>
+	<dt>가격</dt>
+	<dd>{{ product.price }}원</dd>
+</dl>
+{% endblock %}

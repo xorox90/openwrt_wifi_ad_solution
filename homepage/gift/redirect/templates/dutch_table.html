@@ -1,0 +1,52 @@
+{% extends "sub_base.html" %}
+{% load menu_tags sekizai_tags %}
+{% load thumbnail %}
+{% block sub_menu %}
+{% show_menu_below_id "shopping" %}
+{% endblock %}
+
+{% addtoblock "css" %}
+<style type="text/css">
+	.errorlist li{
+	color:red;
+	}
+</style>
+{% endaddtoblock "css" %}
+
+{% block sub_content %}
+	<dl>
+		<dt>상품명</dt>
+		<dd>{{ product.name }}</dd>
+		{% thumbnail product.image "150x150" crop="center" as im %}
+		
+		<dt>상품 이미지<dt>
+		<dd><img class="img-polaroid" src="{{ im.url }}" width="{{im.width}}" height="{{im.height}}" /></dd>
+		{% endthumbnail %}
+		
+		<dt>가격</dt>
+		<dd>{{ product.price }}원</dd>
+		
+		<dt>결제 시한</dt>
+		<dd>{{dutch.close_date}} <strong>까지</strong></dd>
+		<dt>받으시는 분</dt>
+		<dd>{{destination}}</dd>
+	</dl>
+	<br />	
+	<strong>분담 상황</strong>
+	<table class="table">
+	<tr><td>분담금액</td><td>결제여부</td><td>이름</td><td>메세지</td></tr>
+	{% for dutch_row in dutch_table %}
+		<tr><td>{{dutch_row.money}}</td>
+
+		{% if dutch_row.payed %}
+		<td>결제 완료됨</td>
+		{% else %}
+		<td><a href="/pg/dutch.php?id={{dutch_row.id}}" target="_blank">결제하기</a></td>
+		{% endif %}
+		<td>{{dutch_row.name}}</td>
+		<td>{{dutch_row.msg}}</td>
+		</tr>
+	
+	{% endfor %}
+	</table>
+{% endblock %}
