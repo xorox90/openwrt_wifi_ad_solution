@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADD_EV	epoll_server.c	23;"	d	file:
+CC	Makefile	/^CC = \/home\/jwn02\/project\/openwrt\/sdk\/staging_dir\/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2\/bin\/mips-openwrt-linux-uclibc-gcc$/;"	m
+DATA_SIZE	epoll_server.c	21;"	d	file:
+DEL_EV	epoll_server.c	24;"	d	file:
+Data	single_list.h	/^	Node_data *Data;$/;"	m	struct:tagNode
+INCLUDE	Makefile	/^INCLUDE =\/home\/jwn02\/project\/openwrt\/sdk\/staging_dir\/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2\/include$/;"	m
+LIBRARY	Makefile	/^LIBRARY = \/home\/jwn02\/project\/openwrt\/sdk\/staging_dir\/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2\/lib$/;"	m
+LISTEN_BACKLOG	epoll_server.c	18;"	d	file:
+MAX_EPOLL_EVENTS	epoll_server.c	20;"	d	file:
+Mac	single_list.h	/^	char *Mac;$/;"	m	struct:node_data
+NextNode	single_list.h	/^	struct tagNode *NextNode;$/;"	m	struct:tagNode	typeref:struct:tagNode::tagNode
+Node	single_list.h	/^}Node;$/;"	t	typeref:struct:tagNode
+Node_data	single_list.h	/^}Node_data;$/;"	t	typeref:struct:node_data
+PORT	epoll_server.c	19;"	d	file:
+SL_AppendNode	single_list.h	/^void SL_AppendNode(Node **Head,Node *NewNode)$/;"	f
+SL_Create	single_list.h	/^Node* SL_Create(char *Mac,int Time)$/;"	f
+SL_CreateNode	single_list.h	/^Node* SL_CreateNode (Node_data *NewData)$/;"	f
+SL_Delete	single_list.h	/^void SL_Delete(Node **Head,int Time)$/;"	f
+SL_DestroyNode	single_list.h	/^void SL_DestroyNode(Node *Node)$/;"	f
+SL_GetNodeAt	single_list.h	/^Node *SL_GetNodeAt(Node *Head, int Location)$/;"	f
+SL_Insert	single_list.h	/^void SL_Insert(Node **Head,char *Mac,int Time)$/;"	f
+SL_InsertAfter	single_list.h	/^void SL_InsertAfter(Node *Current,Node *NewNode)$/;"	f
+SL_InsertNewHead	single_list.h	/^void SL_InsertNewHead(Node **Head,Node *NewHead)$/;"	f
+SL_RemoveNode	single_list.h	/^void SL_RemoveNode (Node **Head,Node *Remove)$/;"	f
+Time	single_list.h	/^	int Time;$/;"	m	struct:node_data
+_EPOLL_SERVER	epoll_server.h	2;"	d
+_SINGLE_LIST_H	single_list.h	2;"	d
+add_ev	epoll_server.c	/^int add_ev(int efd, int fd)$/;"	f
+add_list	epoll_server.h	/^int add_list(Node **list,const char* data)$/;"	f
+check	epoll_server.c	/^int check=1;$/;"	v
+del_ev	epoll_server.c	/^int del_ev(int efd, int fd)$/;"	f
+list	epoll_server.c	/^Node *list;$/;"	v
+main	epoll_server.c	/^int main(void)$/;"	f
+main	list_test.c	/^int main(void)$/;"	f
+node_data	single_list.h	/^typedef struct node_data {$/;"	s
+substr	epoll_server.h	/^static char* substr(char* input_data)$/;"	f
+tagNode	single_list.h	/^typedef struct tagNode {$/;"	s
+time_check	epoll_server.c	/^void *time_check(void *arg)$/;"	f
